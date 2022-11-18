@@ -29,45 +29,36 @@ const select = document.querySelector('select');
                 console.log(select);
 const success = document.querySelector('input');
                 console.log(success);
+const submit = document.querySelector('button');
+                console.log(submit);
+const output = document.getElementsByClassName('output')[0];
+                console.log(output);
 const FormComponent = class {
         constructor() {
         }
         start() {
+                // Creating an option for each element of the array
                 oppoStatus.forEach(e => {
-                        let option = new Option
-                        option.innerHTML = e.STATUS
-                        option.id = e.K_OPPO_STATUS
-                        select.appendChild(option)
-                        option.addEventListener('click',() =>{
-                                success.value = indexOf()
-                        })
+                        let option = new Option;
+                        option.innerHTML = e.STATUS;
+                        option.id = e.K_OPPO_STATUS;
+                        option.value = e.SUCCESS;
+                        select.appendChild(option);
                 });
-                const show = () => {
-                        let value = select.value;
-                        console.log(value);
-                      }
-                select.addEventListener("change",show); // log value on change
-
-
-
-
-
-
-                // for (let i= 0; i < select.childNodes.length; i++) {
-                        
-                //         let option = document.getElementById(i);
-                //         console.log(option);
-                // }
-                // // var index = option.selectedIndex;
-                // select.addEventListener('click',()=>{
-                //         success.value = index;
-                //         console.log('click');
-                // });
-                
-
+                // Display value inside of the input
+                const display = () => {
+                        success.value = select.value;
+                };
+                const show = (e) => {
+                        output.innerHTML = 'plop';
+                        //prevent page reaload
+                        e.preventDefault();
+                }
+                select.addEventListener("change",display);
+                submit.addEventListener("click",show);
                 // You are allowed to add extra methods, properties or change the constructor of this class
-        }
-}
+        };
+};
 
 const fc = new FormComponent();
 fc.start();
