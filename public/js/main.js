@@ -25,9 +25,10 @@ const oppoStatus = [
                 "SUCCESS": 100
         }
 ];
-let select = document.querySelector('select');
+const select = document.querySelector('select');
                 console.log(select);
-                
+const success = document.querySelector('input');
+                console.log(success);
 const FormComponent = class {
         constructor() {
         }
@@ -37,7 +38,32 @@ const FormComponent = class {
                         option.innerHTML = e.STATUS
                         option.id = e.K_OPPO_STATUS
                         select.appendChild(option)
+                        option.addEventListener('click',() =>{
+                                success.value = indexOf()
+                        })
                 });
+                const show = () => {
+                        let value = select.value;
+                        console.log(value);
+                      }
+                select.addEventListener("change",show); // log value on change
+
+
+
+
+
+
+                // for (let i= 0; i < select.childNodes.length; i++) {
+                        
+                //         let option = document.getElementById(i);
+                //         console.log(option);
+                // }
+                // // var index = option.selectedIndex;
+                // select.addEventListener('click',()=>{
+                //         success.value = index;
+                //         console.log('click');
+                // });
+                
 
                 // You are allowed to add extra methods, properties or change the constructor of this class
         }
