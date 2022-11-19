@@ -36,10 +36,19 @@ const output = document.getElementsByClassName('output')[0];
 console.log(output);
 const body = document.querySelector('body');
 console.log(body);
-var img = document.createElement("img");
+const img = document.createElement('img');
 img.src = "./public/img/sub.png";
 img.className = 'submarine';
 body.appendChild(img);
+const form = document.querySelector('form');
+const divSub = document.createElement('div');
+const divOut = document.createElement('div');
+form.appendChild(divSub);
+form.appendChild(divOut);
+//insert button inside the first div
+divSub.append((submit));
+//insert output inside the second div
+divOut.append((output));
 
 const FormComponent = class {
         constructor() {

@@ -5,20 +5,14 @@ body {
         background-size: cover;
         height: 500px;
 }
-
-form,
-.output {
-        float: right;
+ form{
+        float: right;    
 }
-
-.output {
-        position: absolute;
-        right: 15px;
-        bottom: 0;
-        top: 85px;
-        color: rgb(0, 0, 0);
+div{
+        display: flex;
+        align-items: center;
+        justify-content: end;
 }
-
 select,
 input,
 button {
@@ -46,8 +40,11 @@ input {
 button {
         width: 70px;
         padding: 16px 5px;
-        margin: 16px 0 16px 0;
+        margin: 2px 0 16px 0;
         text-transform: uppercase;
+}
+.output{
+        font-family: monospace;
 }
 
 button:hover {
