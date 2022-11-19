@@ -25,20 +25,22 @@ const oppoStatus = [
                 "SUCCESS": 100
         }
 ];
+
 const select = document.querySelector('select');
-                console.log(select);
+console.log(select);
 const success = document.querySelector('input');
-                console.log(success);
+console.log(success);
 const submit = document.querySelector('button');
-                console.log(submit);
+console.log(submit);
 const output = document.getElementsByClassName('output')[0];
-                console.log(output);
-const body  = document.querySelector('body');
-                console.log(body);
+console.log(output);
+const body = document.querySelector('body');
+console.log(body);
 var img = document.createElement("img");
-        img.src = "./public/img/sub.png";
-        img.className = 'submarine';
-        body.appendChild(img);
+img.src = "./public/img/sub.png";
+img.className = 'submarine';
+body.appendChild(img);
+
 const FormComponent = class {
         constructor() {
         }
@@ -63,14 +65,14 @@ const FormComponent = class {
                         img.classList.add('subActive');
                         body.classList.add('anim');
                         setTimeout(() => {
-                                output.innerHTML = `{"status":${select.selectedIndex+1},"success":${select.value}}`;
-                }, 3000);
-                //prevent page reaload
-                e.preventDefault();
-                clearTimeout();
+                                output.innerHTML = `{"status":${select.selectedIndex + 1},"success":${select.value}}`;
+                        }, 3000);
+                        //prevent page reaload
+                        e.preventDefault();
+                        clearTimeout();
                 };
-                select.addEventListener("change",display);
-                submit.addEventListener("click",show);
+                select.addEventListener("change", display);
+                submit.addEventListener("click", show);
                 // You are allowed to add extra methods, properties or change the constructor of this class
         };
 };

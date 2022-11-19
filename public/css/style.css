@@ -1,10 +1,81 @@
+/* Style */
 body {
         background-image: url(../img/og-image2.png);
         background-repeat: no-repeat;
         background-size: cover;
         height: 500px;
 }
-.anim{
+
+form,
+.output {
+        float: right;
+}
+
+.output {
+        position: absolute;
+        right: 15px;
+        bottom: 0;
+        top: 85px;
+        color: rgb(0, 0, 0);
+}
+
+select,
+input,
+button {
+        border: none;
+        border-radius: 4px;
+        background-color: #18a395;
+        color: #fff;
+}
+
+select {
+        padding: 16px 20px;
+        margin: 16px 0 16px 0;
+}
+select:focus,select:hover{
+        background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+        background-color: #6c7c7c;
+}
+
+input {
+        width: 70px;
+        padding: 16px 20px;
+        margin: 16px 0 16px 0;
+}
+
+button {
+        width: 70px;
+        padding: 16px 5px;
+        margin: 16px 0 16px 0;
+        text-transform: uppercase;
+}
+
+button:hover {
+        background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+        background-color: #6c7c7c;
+}
+
+button:active {
+        position: relative;
+        top: 1px;
+}
+
+/* Animation parameters */
+
+.submarine {
+        display: none;
+}
+
+.subActive {
+        display: block;
+        top: 19%;
+        position: relative;
+        animation-name: sub;
+        animation-duration: 3.7s;
+        animation-fill-mode: forwards;
+}
+
+.anim {
         animation-name: body;
         animation-duration: 1s;
         animation-delay: 2.7s;
@@ -13,26 +84,8 @@ body {
 
 }
 
-form,
-.output {
-        float: right;
-}
+/* animation keyframes */
 
-.submarine {
-        display: none;
-}
-
-.subActive {
-        display: block;
-        top: 100px;
-        position: relative;
-        animation-name: sub;
-        animation-duration: 3.7s;
-        animation-fill-mode: forwards;
-}
-
-
-/* animation */
 @keyframes sub {
         0% {
                 -webkit-transform: translateX(0);
@@ -47,6 +100,8 @@ form,
         }
 }
 
+/* Media queries */
+
 @keyframes body {
         0% {
                 background-image: url(../img/og-image2.png);
@@ -56,5 +111,30 @@ form,
         100% {
                 background-image: url(../img/og-image.png);
 
+        }
+}
+
+@media only screen and (min-width: 1500px) {
+        .subActive {
+                display: block;
+                top: 56%;
+                position: relative;
+                animation-name: sub;
+                animation-duration: 3.7s;
+                animation-fill-mode: forwards;
+        }
+
+        @keyframes sub {
+                0% {
+                        -webkit-transform: translateX(0);
+                        transform: translateX(0);
+                        opacity: 0;
+                }
+
+                100% {
+                        -webkit-transform: translateX(860px);
+                        transform: translateX(860px);
+                        opacity: 1;
+                }
         }
 }
