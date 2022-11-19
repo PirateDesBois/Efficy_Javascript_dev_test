@@ -1,15 +1,60 @@
-body{
-        background-image: url(../img/og-image.png);
+body {
+        background-image: url(../img/og-image2.png);
         background-repeat: no-repeat;
         background-size: cover;
         height: 500px;
 }
-form,.output{
-        float:right;
+.anim{
+        animation-name: body;
+        animation-duration: 1s;
+        animation-delay: 2.7s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+
 }
-.submarine{
+
+form,
+.output {
+        float: right;
+}
+
+.submarine {
         display: none;
 }
-.subActive{
+
+.subActive {
         display: block;
+        top: 100px;
+        position: relative;
+        animation-name: sub;
+        animation-duration: 3.7s;
+        animation-fill-mode: forwards;
+}
+
+
+/* animation */
+@keyframes sub {
+        0% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 0;
+        }
+
+        100% {
+                -webkit-transform: translateX(460px);
+                transform: translateX(460px);
+                opacity: 1;
+        }
+}
+
+@keyframes body {
+        0% {
+                background-image: url(../img/og-image2.png);
+
+        }
+
+        100% {
+                background-image: url(../img/og-image.png);
+
+        }
 }

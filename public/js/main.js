@@ -55,9 +55,13 @@ const FormComponent = class {
                 // Display value inside of the input
                 const display = () => {
                         success.value = select.value;
+                        img.classList.remove('subActive');
+                        body.classList.remove('anim');
+                        output.innerHTML = `Waiting for form submit...`;
                 };
                 const show = (e) => {
-                        img.setAttribute('class','subActive');
+                        img.classList.add('subActive');
+                        body.classList.add('anim');
                         setTimeout(() => {
                                 output.innerHTML = `{"status":${select.selectedIndex+1},"success":${select.value}}`;
                 }, 3000);
